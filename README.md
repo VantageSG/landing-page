@@ -18,5 +18,5 @@ npm start
 
 ## Deploy to github pages
 ```
-npm deploy
+npm run deploy
 ```
