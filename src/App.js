@@ -9,19 +9,28 @@ import {
   Button,
   Divider,
   Placeholder,
-  Card
+  Card,
+  Responsive
 } from "semantic-ui-react";
 import { Animated } from "react-animated-css";
 import './App.css';
+import ResponsiveContainer from "./navbar/NavBar";
 
 function App() {
   return (
     <div>
+      <ResponsiveContainer loggedInStatus={false} user={{}}> 
       <Animated animationIn="fadeIn" isVisible={true}>
+        <Responsive
+        
+        minWidth={Responsive.onlyTablet.minWidth}>
+
+
         <Container
           fluid
           textAlign="center"
           style={{
+            marginLeft: "0em",
             marginBottom: "auto",
             minHeight: "50vh",
             backgroundColor: "#1b1c1d"
@@ -34,6 +43,18 @@ function App() {
             </Header>
           </Segment>
         </Container>
+        </Responsive>
+
+        <Responsive maxWidth={Responsive.onlyTablet.minWidth}>
+        <div style={{backgroundColor: "#1b1c1d"}}>
+        <Segment placeholder style={{ minHeight: "50vh" }} inverted>
+            <Header as="h2" color="teal" textAlign="center" icon>
+              <Icon name="home" />
+              Welcome To Vantage
+            </Header>
+          </Segment>
+          </div>
+        </Responsive>
 
         <Container
           text
@@ -43,10 +64,17 @@ function App() {
           <Grid centered columns={1}>
             <Grid.Column>
               <Container fluid textAlign="center">
-                {" "}
-                <Header as="h1" style={{ fontSize: "4em" }}>
+                <Responsive maxWidth={Responsive.onlyTablet.minWidth}>
+                <Header as="h1" style={{ fontSize: "3em" }}>
                   VANTAGE
                 </Header>
+                </Responsive>
+                <Responsive minWidth={Responsive.onlyTablet.minWidth}>
+                <Header as="h1" style={{ fontSize: "5em" }}>
+                  VANTAGE
+                </Header>
+                </Responsive>
+               
               </Container>
 
               <Card centered fluid style={{ height: "30vh" }}>
@@ -65,9 +93,8 @@ function App() {
             </Grid.Column>
           </Grid>
         </Container>
-
+       
         <Divider></Divider>
-
         <Container text textAlign="center" style={{}}>
           <Grid centered columns={1}>
             <Grid.Column>
@@ -75,7 +102,7 @@ function App() {
                 <Header as="h1" style={{ fontSize: "3.5em" }}>
                   About Us
                 </Header>
-
+                <Responsive minWidth={Responsive.onlyTablet.minWidth} >
                 <Divider
                   as="h3"
                   className="header"
@@ -123,10 +150,12 @@ function App() {
                   Yes that's right, you thought it was the stuff of dreams,
                   but even bananas can be bioengineered.
                 </p>
+                </Responsive>
               </Container>
             </Grid.Column>
           </Grid>
         </Container>
+        
 
         <Divider></Divider>
 
@@ -137,7 +166,7 @@ function App() {
                 <Header as="h1" style={{ fontSize: "3.5em" }}>
                   Our Mission
                 </Header>
-
+                <Responsive minWidth={Responsive.onlyTablet.minWidth} >
                 <Divider
                   as="h3"
                   className="header"
@@ -185,6 +214,7 @@ function App() {
                   Yes that's right, you thought it was the stuff of dreams,
                   but even bananas can be bioengineered.
                 </p>
+                </Responsive>
               </Container>
             </Grid.Column>
           </Grid>
@@ -289,6 +319,8 @@ function App() {
           </Grid>
         </Container>
       </Animated>
+      </ResponsiveContainer>
+     
     </div>
   );
 }
