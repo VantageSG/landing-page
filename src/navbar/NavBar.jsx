@@ -88,15 +88,8 @@ class MobileNavBar extends Component {
           vertical
           visible={sidebarOpened}
         >
-          <Menu.Item as={Link} to="/">
-            Home
-          </Menu.Item>
-          <Menu.Item as={Link} to="/UserProfiles">
-            User Profiles
-          </Menu.Item>
-          <Menu.Item as={Link} to="/ResumeBuilder">
-            Resume Builder
-          </Menu.Item>
+          
+          
         </Sidebar>
         <Visibility once={true}>
         <Segment
@@ -107,13 +100,7 @@ class MobileNavBar extends Component {
         >
           <Container>
             <Menu inverted pointing secondary size="large">
-              <Menu.Item onClick={this.handleToggle}>
-                <Icon name="sidebar" />
-              </Menu.Item>
-              {this.renderRegistrationButton(
-                this.props.loggedInStatus,
-                this.props.user
-              )}
+              
             </Menu>
           </Container>
         </Segment>
@@ -222,20 +209,7 @@ class DesktopNavBar extends Component {
                 size="large"
               >
                 <Container>
-                  <Menu.Item as={Link} to="/">
-                    Home
-                  </Menu.Item>
-                  <Menu.Item as={Link} to="/UserProfiles">
-                    User Profiles
-                  </Menu.Item>
-                  <Menu.Item as={Link} to="/ResumeBuilder">
-                    Resume Builder
-                  </Menu.Item>
-
-                  {this.renderRegistrationButton(
-                    this.props.loggedInStatus,
-                    this.props.user
-                  )}
+              
                 </Container>
               </Menu>
             </Segment>
